@@ -6,7 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check for installed packages
+        uses: actions/node-install
       - run: npm i
       - run: echo "node packages successfully installed!"
       - name: Run comprehensive unit testing
+        uses: actions/unit-testing
       - run: npm test
