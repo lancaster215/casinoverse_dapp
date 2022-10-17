@@ -1,0 +1,12 @@
+name: dApp github actions
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for installed packages
+      - run: npm i
+      - run: echo "node packages successfully installed!"
+      - name: Run comprehensive unit testing
+      - run: npm test

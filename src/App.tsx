@@ -59,6 +59,7 @@ function App() {
       dispatch(_setMetamaskAddress(await signer.getAddress()));
 
       let gasPrice = await signer.getGasPrice();
+      console.log(gasPrice)
       setGasPrice(parseInt(gasPrice.toString()));
       setAddress(await signer.getAddress());
     }
@@ -129,7 +130,7 @@ function App() {
 
     try {
       // mint(1, {}) 1 is one of the unminted asset. 
-      minting = await contract.current.connect(currentAccount!).mint(1, {
+      minting = await contract.current.connect(currentAccount!).mint(2, {
         value: ethers.utils.parseEther(`${amount}`),
       });
       setMintingVal({ error: "", value: minting, openErrModal: false });
